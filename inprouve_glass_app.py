@@ -134,17 +134,17 @@ if classifier == 'Support Vector Machine':
     gamma_input = st. sidebar.number_input("Gamma", 1, 100, step = 1)
 
 
-if st.sidebar.button('Classify'):
-    st.subheader("Support Vector Machine")
-    svc_model = SVC(C = c_value, kernel = kernel_input, gamma = gamma_input)
-    svc_model.fit(X_train,y_train)
-    y_pred = svc_model.predict(X_test)
-    accuracy = svc_model.score(X_test, y_test)
-    glass_type = prediction(svc_model, ri, na, mg, al, si, k, ca, ba, fe)
-    st.write("The Type of glass predicted is:", glass_type)
-    st.write("Accuracy", accuracy.round(2))
-    plot_confusion_matrix(svc_model, X_test, y_test)
-    st.pyplot()
+    if st.sidebar.button('Classify'):
+        st.subheader("Support Vector Machine")
+        svc_model = SVC(C = c_value, kernel = kernel_input, gamma = gamma_input)
+        svc_model.fit(X_train,y_train)
+        y_pred = svc_model.predict(X_test)
+        accuracy = svc_model.score(X_test, y_test)
+        glass_type = prediction(svc_model, ri, na, mg, al, si, k, ca, ba, fe)
+        st.write("The Type of glass predicted is:", glass_type)
+        st.write("Accuracy", accuracy.round(2))
+        plot_confusion_matrix(svc_model, X_test, y_test)
+        st.pyplot()
 
 if classifier == 'Random Forest Classifier':
     st.sidebar.subheader("Model Hyperparameters")
