@@ -82,12 +82,6 @@ for feature in features_list:
 st.sidebar.subheader("Visualisation Selector")
 plot_types = st.sidebar.multiselect("Select the charts or plots:",
                                     ('Histogram', 'Box Plot', 'Count Plot', 'Pie Chart', 'Correlation Heatmap', 'Pair Plot'))
-                                    if 'Histogram' in plot_types:
-st.subheader("Histogram")
-columns = st.sidebar.selectbox("Select the column to create its histogram",
-                                  ('RI', 'Na', 'Mg', 'Al', 'Si', 'K', 'Ca', 'Ba', 'Fe'))
-
-
 
 if 'Box Plot' in plot_types:
     st.subheader("Box Plot")
