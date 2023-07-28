@@ -1,0 +1,1 @@
+web: sh setup.sh && streamlit run inprouved_glass_app.py
